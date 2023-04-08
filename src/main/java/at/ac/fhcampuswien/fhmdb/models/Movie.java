@@ -1,18 +1,22 @@
 package at.ac.fhcampuswien.fhmdb.models;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Movie {
     private final String title;
     private final String description;
     private final List<Genre> genres;
+    private final List<String> mainCast;
+    private final int releaseYear;
 
-    public Movie(String title, String description, List<Genre> genres) {
+    private final String director ;
+    public Movie(String title, String description, List<Genre> genres, List<String>mainCast, int releaseYear, String director) {
         this.title = title;
         this.description = description;
         this.genres = genres;
+        this.mainCast=mainCast;
+        this.releaseYear = releaseYear;
+        this.director=director;
     }
 
     @Override
@@ -41,7 +45,19 @@ public class Movie {
         return genres;
     }
 
-    public static List<Movie> initializeMovies(){
+    public  List<String>getCast() {
+        return mainCast;
+    }
+
+    public String getDirector() {
+        return director;
+    }
+
+    public int getReleaseYear() {
+        return releaseYear;
+    }
+
+   /* public static List<Movie> initializeMovies(){
         List<Movie> movies = new ArrayList<>();
         movies.add(new Movie(
                 "Life Is Beautiful",
@@ -65,5 +81,5 @@ public class Movie {
                 Arrays.asList(Genre.DRAMA, Genre.ROMANCE, Genre.BIOGRAPHY)));
 
         return movies;
-    }
+    }*/
 }
