@@ -9,8 +9,8 @@ import java.util.List;
         private final String title;
         private final String description;
         private final List<Genre> genres;
-        //neue hinzufügen, damit man das JSON in das Objekt umschreiben kann. (sonst kennt sich der Compiler nicht aus wie der das Überschreiben soll)
-        //alle Sachen die wir zurückbekommen von unserer Antwort
+        //add new ones so that you can rewrite the JSON into the object. (otherwise the compiler does not know how to overwrite)
+        //anything we get back from our response
         private final String id;
         private final int releaseYear;
         private final String imgUrl;
@@ -37,7 +37,7 @@ import java.util.List;
 
         }
 
-        // Überladen - damit nicht alles abändern muss
+        // Overload - so you don't have to change everything
         public Movie(String title, String description, List<Genre> genres,String id, int releaseYear, String imgUrl, int lengthInMinutes, List<String> directors, List<String> writers, List<String> mainCast, double rating) {
             this.title = title;
             this.description = description;
@@ -52,7 +52,7 @@ import java.util.List;
             this.rating = rating;
         }
 
-        // Überladen zum Ausprobieren der Streams
+        // Overload to try out the streams
         public Movie(String title, List<String> directors, List<String> mainCast, int releaseYear) {
             this.title = title;
             this.description = "";
