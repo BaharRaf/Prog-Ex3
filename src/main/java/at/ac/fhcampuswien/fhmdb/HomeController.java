@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien.fhmdb;
 
+
 import at.ac.fhcampuswien.fhmdb.ui.MovieAPI;
 import at.ac.fhcampuswien.fhmdb.models.Genre;
 import at.ac.fhcampuswien.fhmdb.models.Movie;
@@ -18,7 +19,6 @@ import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.*;
-
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -61,7 +61,7 @@ public class HomeController implements Initializable {
     }
 
     public void initializeState() {
-        allMovies = MovieAPI.getAllMovies(); //get the API movies
+        allMovies = MovieAPI.getAllMovies(); //get the API movies hehe
         observableMovies.clear();
         observableMovies.addAll(allMovies); // add all movies to the observable list
         sortedState = SortedState.NONE;
