@@ -2,7 +2,6 @@ package at.ac.fhcampuswien.fhmdb.ui;
 
 import at.ac.fhcampuswien.fhmdb.models.Movie;
 import at.ac.fhcampuswien.fhmdb.models.Genre;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
