@@ -11,7 +11,7 @@ import com.google.gson.*;
 
 
 public class MovieAPI {
-    private static final String URL = "http://localhost:8080/movies";
+    private static final String URL = "https://prog2.fh-campuswien.ac.at/movies";
     private static final String DELIMITER = "&";
 
 
