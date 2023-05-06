@@ -1,6 +1,9 @@
 package at.ac.fhcampuswien.fhmdb.ui;
 
+import at.ac.fhcampuswien.fhmdb.layers.WatchListRepository;
 import at.ac.fhcampuswien.fhmdb.models.Movie;
+import com.jfoenix.controls.JFXButton;
+import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -8,13 +11,19 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+
+import java.sql.SQLException;
 import java.util.stream.Collectors;
 
 public class MovieCell extends ListCell<Movie> {
     private final Label title = new Label();
     private final Label detail = new Label();
     private final Label genre = new Label();
-    private final VBox layout = new VBox(title, detail, genre);
+    private final JFXButton detailBtn = new JFXButton("Show Details");
+    private final JFXButton addToWatchlistBtn = new JFXButton("Add to watchlist");
+    private final VBox layout = new VBox(title, detail, genre, detailBtn, addToWatchlistBtn);
+
+    WatchListRepository repository = new WatchListRepository();
 
     @Override
     protected void updateItem(Movie movie, boolean empty) {
@@ -40,6 +49,10 @@ public class MovieCell extends ListCell<Movie> {
 
 
             // color scheme
+            detailBtn.setPrefWidth(110);
+            detailBtn.getStyleClass().add("background-yellow");
+            addToWatchlistBtn.setPrefWidth(110);
+            addToWatchlistBtn.getStyleClass().add("background-yellow");
             title.getStyleClass().add("text-yellow");
             detail.getStyleClass().add("text-white");
             genre.getStyleClass().add("text-white");
@@ -56,4 +69,5 @@ public class MovieCell extends ListCell<Movie> {
             setGraphic(layout);
         }
     }
+
 }

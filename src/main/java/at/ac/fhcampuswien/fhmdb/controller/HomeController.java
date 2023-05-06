@@ -1,6 +1,6 @@
-package at.ac.fhcampuswien.fhmdb;
+package at.ac.fhcampuswien.fhmdb.controller;
 
-
+import at.ac.fhcampuswien.fhmdb.FhmdbApplication;
 import at.ac.fhcampuswien.fhmdb.ui.MovieAPI;
 import at.ac.fhcampuswien.fhmdb.models.Genre;
 import at.ac.fhcampuswien.fhmdb.models.Movie;
@@ -13,10 +13,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 import java.util.function.Function;
@@ -29,6 +34,9 @@ public class HomeController implements Initializable {
 
     @FXML
     public TextField searchField;
+
+    @FXML
+    public JFXButton watchlistBtn;
 
     @FXML
     public JFXListView movieListView;
@@ -46,13 +54,15 @@ public class HomeController implements Initializable {
     public JFXComboBox ratingFromComboBox;
     @FXML
     public Button resetBtn;
+    @FXML
+    public VBox mainVBox;
 
 
     public List<Movie> allMovies;
 
-    protected ObservableList<Movie> observableMovies = FXCollections.observableArrayList();
+    public ObservableList<Movie> observableMovies = FXCollections.observableArrayList();
 
-    protected SortedState sortedState;
+    public SortedState sortedState;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -61,7 +71,7 @@ public class HomeController implements Initializable {
     }
 
     public void initializeState() {
-        allMovies = MovieAPI.getAllMovies(); //get the API movies
+        allMovies = MovieAPI.getAllMovies(); //get the API movies hehe
         observableMovies.clear();
         observableMovies.addAll(allMovies); // add all movies to the observable list
         sortedState = SortedState.NONE;
@@ -144,9 +154,6 @@ public class HomeController implements Initializable {
             throw new IllegalArgumentException("movies must not be null");
         }
 
-        if(movies == null) {
-            throw new IllegalArgumentException("movies must not be null");
-        }
 
         double minRating = Double.parseDouble(rating.replace("+", ""));
         return movies.stream()
@@ -206,7 +213,6 @@ public class HomeController implements Initializable {
         }
     }
 
-
     // RESET BUTTON
     public void clearBtnClicked(ActionEvent actionEvent) {
         genreComboBox.getSelectionModel().clearSelection();
@@ -220,6 +226,19 @@ public class HomeController implements Initializable {
 
     public void sortBtnClicked(ActionEvent actionEvent) {
         sortMovies();
+    }
+
+    // SWITCH SCENE:
+    public void switchToWatchlistView(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(FhmdbApplication.class.getResource("watchlist-view.fxml"));
+        try {
+            Scene scene = new Scene(fxmlLoader.load(), 890, 620);
+            Stage stage = (Stage)mainVBox.getScene().getWindow();
+            stage.setScene(scene);
+
+        } catch (IOException ioe) {
+            System.err.println("Error while loading main page.");
+        }
     }
 
 
@@ -269,13 +288,4 @@ public class HomeController implements Initializable {
                 .collect(Collectors.toList());     // Step 4: collect the filtered movies into a list and return it
     }
 
-
-    // Check Streams:
-    public static void main(String[] args) {
-        System.out.println(getMoviesBetweenYears(Movie.memeMovies(), 1999,2000));
-        System.out.println(countMoviesFrom(Movie.memeMovies(), "hi"));
-        System.out.println(getLongestMovieTitle(Movie.memeMovies()));
-        System.out.println(getMostPopularActor(Movie.memeMovies()));
-
-    }
 }

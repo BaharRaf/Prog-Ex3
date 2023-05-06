@@ -9,9 +9,9 @@ public class Movie {
     private final String title;
     private final String description;
     private final List<Genre> genres;
-    //add new ones so that you can rewrite the JSON into the object. (otherwise the compiler does not know how to overwrite)
-    //anything we get back from our response
-    private final String id;
+    //neue hinzufügen, damit man das JSON in das Objekt umschreiben kann. (sonst kennt sich der Compiler nicht aus wie der das Überschreiben soll)
+    //alle Sachen die wir zurückbekommen von unserer Antwort
+    private final String apiId;
     private final int releaseYear;
     private final String imgUrl;
     private final int lengthInMinutes;
@@ -26,7 +26,7 @@ public class Movie {
         this.title = title;
         this.description = description;
         this.genres = genres;
-        this.id = null;
+        this.apiId = null;
         this.releaseYear = 0;
         this.imgUrl = "";
         this.lengthInMinutes = 0;
@@ -37,12 +37,12 @@ public class Movie {
 
     }
 
-    // Overload - so you don't have to change everything
-    public Movie(String title, String description, List<Genre> genres,String id, int releaseYear, String imgUrl, int lengthInMinutes, List<String> directors, List<String> writers, List<String> mainCast, double rating) {
+    // Überladen - damit nicht alles abändern muss
+    public Movie(String title, String description, List<Genre> genres,String apiId, int releaseYear, String imgUrl, int lengthInMinutes, List<String> directors, List<String> writers, List<String> mainCast, double rating) {
         this.title = title;
         this.description = description;
         this.genres = genres;
-        this.id = id;
+        this.apiId = apiId;
         this.releaseYear = releaseYear;
         this.imgUrl = imgUrl;
         this.lengthInMinutes = lengthInMinutes;
@@ -52,12 +52,12 @@ public class Movie {
         this.rating = rating;
     }
 
-    // Overload to try out the streams
+    // Überladen zum Ausprobieren der Streams
     public Movie(String title, List<String> directors, List<String> mainCast, int releaseYear) {
         this.title = title;
         this.description = "";
         this.genres = null;
-        this.id = null;
+        this.apiId = null;
         this.releaseYear = releaseYear;
         this.imgUrl = "";
         this.lengthInMinutes = 0;
@@ -68,6 +68,10 @@ public class Movie {
 
     }
 
+    @Override
+    public String toString() {
+        return title;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -95,8 +99,8 @@ public class Movie {
         return genres;
     }
 
-    public String getId() {
-        return id;
+    public String getApiId() {
+        return apiId;
     }
 
     public int getReleaseYear() {
@@ -128,56 +132,31 @@ public class Movie {
     }
 
     // Not used anymore
-public static List<Movie> initializeMovies(){
+
+    public static List<Movie> initializeMovies(){
         List<Movie> movies = new ArrayList<>();
         movies.add(new Movie(
-        "Life Is Beautiful",
-        "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp." ,
-        Arrays.asList(Genre.DRAMA, Genre.ROMANCE)));
+                "Life Is Beautiful",
+                "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp." ,
+                Arrays.asList(Genre.DRAMA, Genre.ROMANCE)));
         movies.add(new Movie(
-        "The Usual Suspects",
-        "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which begin when five criminals meet at a seemingly random police lineup.",
-        Arrays.asList(Genre.CRIME, Genre.DRAMA, Genre.MYSTERY)));
+                "The Usual Suspects",
+                "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which begin when five criminals meet at a seemingly random police lineup.",
+                Arrays.asList(Genre.CRIME, Genre.DRAMA, Genre.MYSTERY)));
         movies.add(new Movie(
-        "Puss in Boots",
-        "An outlaw cat, his childhood egg-friend, and a seductive thief kitty set out in search for the eggs of the fabled Golden Goose to clear his name, restore his lost honor, and regain the trust of his mother and town.",
-        Arrays.asList(Genre.COMEDY, Genre.FAMILY, Genre.ANIMATION)));
+                "Puss in Boots",
+                "An outlaw cat, his childhood egg-friend, and a seductive thief kitty set out in search for the eggs of the fabled Golden Goose to clear his name, restore his lost honor, and regain the trust of his mother and town.",
+                Arrays.asList(Genre.COMEDY, Genre.FAMILY, Genre.ANIMATION)));
         movies.add(new Movie(
-        "Avatar",
-        "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
-        Arrays.asList(Genre.ANIMATION, Genre.DRAMA, Genre.ACTION)));
+                "Avatar",
+                "A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.",
+                Arrays.asList(Genre.ANIMATION, Genre.DRAMA, Genre.ACTION)));
         movies.add(new Movie(
-        "The Wolf of Wall Street",
-        "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
-        Arrays.asList(Genre.DRAMA, Genre.ROMANCE, Genre.BIOGRAPHY)));
+                "The Wolf of Wall Street",
+                "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+                Arrays.asList(Genre.DRAMA, Genre.ROMANCE, Genre.BIOGRAPHY)));
 
         return movies;
-        }
+    }
 
-public static List<Movie> memeMovies(){
-        List<Movie> movies = new ArrayList<>();
-        String[] directors = new String[]{"hi", "ho"};
-        String[] mainCast = new String[]{"Harry Potter", "Harry Styles"};
-
-        String[] directors2 = new String[]{"hi"};
-        String[] mainCast2 = new String[]{"Kein Ahnung", "Harry Styles"};
-
-
-        movies.add(new Movie(
-        "1234567",
-        Arrays.stream(directors).toList(),
-        Arrays.stream(mainCast).toList(),
-        1999
-        ));
-
-        movies.add(new Movie(
-        "123",
-        Arrays.stream(directors2).toList(),
-        Arrays.stream(mainCast2).toList(),
-        2020
-        ));
-
-        return movies;
-        }
-
-        }
+}
