@@ -61,7 +61,7 @@ public class HomeController implements Initializable {
     }
 
     public void initializeState() {
-        allMovies = MovieAPI.getAllMovies(); //get the API movies hehe
+        allMovies = MovieAPI.getAllMovies(); //get the API movies
         observableMovies.clear();
         observableMovies.addAll(allMovies); // add all movies to the observable list
         sortedState = SortedState.NONE;
