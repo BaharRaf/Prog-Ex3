@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="/db">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2PQyBfRSRtT324LLkRt4lTu7GK6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/43670/IdeaProjects/ProgEx3",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.30689654",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="at.ac.fhcampuswien.fhmdb.ui" />
+      <recent name="at.ac.fhcampuswien.fhmdb.controller" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="at.ac.fhcampuswien.fhmdb.application" />
+      <recent name="at.ac.fhcampuswien.fhmdb.dataLayer" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="ProgEx3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="ProgEx3" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="" />
+      <created>1683403470772</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1683403470772</updated>
+      <workItem from="1683492250896" duration="959000" />
+    </task>
+    <task id="LOCAL-00001" summary="Exception package and class created">
+      <created>1683405723714</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683405723714</updated>
+    </task>
+    <task id="LOCAL-00002" summary="DatabaseException function added">
+      <created>1683406080772</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683406080772</updated>
+    </task>
+    <task id="LOCAL-00003" summary="HomeController update">
+      <created>1683474574389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683474574389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Throwable class and MovieAPIException added">
+      <created>1683476442656</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683476442656</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Exception Propagation from MovieAPI to HomeController">
+      <created>1683477088534</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683477088534</updated>
+    </task>
+    <task id="LOCAL-00006" summary=" MovieAPIException function changed">
+      <created>1683477328420</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683477328420</updated>
+    </task>
+    <task id="LOCAL-00007" summary="db Package and WatchlistMovieEntity class added">
+      <created>1683480346280</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683480346280</updated>
+    </task>
+    <task id="LOCAL-00008" summary="connect to the data base function added to Database">
+      <created>1683486594818</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683486594818</updated>
+    </task>
+    <task id="LOCAL-00009" summary="misc.xml update">
+      <created>1683487901860</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683487901860</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ClickEventHandler interface added">
+      <created>1683491252505</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683491252505</updated>
+    </task>
+    <task id="LOCAL-00011" summary="MovieAPI moved to datalayer">
+      <created>1683492998076</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683492998076</updated>
+    </task>
+    <task id="LOCAL-00012" summary="moved classes to db">
+      <created>1683493414786</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683493414786</updated>
+    </task>
+    <task id="LOCAL-00013" summary="some class movements">
+      <created>1683493694719</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683493694719</updated>
+    </task>
+    <task id="LOCAL-00014" summary="MovieAPI moved">
+      <created>1683493962609</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683493962609</updated>
+    </task>
+    <task id="LOCAL-00015" summary="vcs error">
+      <created>1683497174495</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683497174495</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Database reverted">
+      <created>1683498642437</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1683498642437</updated>
+    </task>
+    <task id="LOCAL-00017" summary="DB URL path updated">
+      <created>1683501123141</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1683501123141</updated>
+    </task>
+    <task id="LOCAL-00018" summary="./db">
+      <created>1683502180830</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1683502180830</updated>
+    </task>
+    <task id="LOCAL-00019" summary="/db">
+      <created>1683502426356</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1683502426356</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Exception package and class created" />
+    <MESSAGE value="DatabaseException function added" />
+    <MESSAGE value="HomeController update" />
+    <MESSAGE value="Throwable class and MovieAPIException added" />
+    <MESSAGE value="Exception Propagation from MovieAPI to HomeController" />
+    <MESSAGE value=" MovieAPIException function changed" />
+    <MESSAGE value="db Package and WatchlistMovieEntity class added" />
+    <MESSAGE value="connect to the data base function added to Database" />
+    <MESSAGE value="misc.xml update" />
+    <MESSAGE value="ClickEventHandler interface added" />
+    <MESSAGE value="MovieAPI moved to datalayer" />
+    <MESSAGE value="moved classes to db" />
+    <MESSAGE value="some class movements" />
+    <MESSAGE value="MovieAPI moved" />
+    <MESSAGE value="vcs error" />
+    <MESSAGE value="Database reverted" />
+    <MESSAGE value="DB URL path updated" />
+    <MESSAGE value="./db" />
+    <MESSAGE value="/db" />
+    <option name="LAST_COMMIT_MESSAGE" value="/db" />
+  </component>
+</project>
