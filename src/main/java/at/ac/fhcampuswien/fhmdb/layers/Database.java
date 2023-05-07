@@ -7,31 +7,31 @@ import com.j256.ormlite.table.TableUtils;
 
 import java.sql.SQLException;
 
-public class Data {
+public class Database {
     public static final String DB_URL = "jdbc:h2:file: ./db/watchlistdb"; //find DB_URL in documentation (embedded)
     public static final String user = "user";
     public static final String password = "pass";
 
     private static ConnectionSource connectionSource; //connectionSource als attribut, weil wir sie immer wieder brauchen
-    private Dao<WatchList, Long> dao; //DAO provides create,delete,update and other operations for database
+    private Dao<WatchListEntity, Long> dao; //DAO provides create,delete,update and other operations for database
 
-    private static Data instance;
-    private Data() throws SQLException{ //exception zu getDatabase
+    private static Database instance;
+    private Database() throws SQLException{ //exception zu getDatabase
         // when creating an instance -> connection to database is created, DAO is created, table is created
         createConnectionSource(); //
-        dao = DaoManager.createDao(connectionSource, WatchList.class);
+        dao = DaoManager.createDao(connectionSource, WatchListEntity.class);
         createTables();
 
     }
-    public static Data getDatabase() throws SQLException { //exception zu WatchlistRepository
+    public static Database getDatabase() throws SQLException { //exception zu WatchlistRepository
         if(instance == null){ //if no instance exists create new Database instance, only one instance should exist(singleton)
-            instance = new Data();
+            instance = new Database();
         }
         return instance;
     }
 
     private static void createTables() throws SQLException { //create table form WatchlistEntity attributes
-        TableUtils.createTableIfNotExists(connectionSource, WatchList.class);
+        TableUtils.createTableIfNotExists(connectionSource, WatchListEntity.class);
     }
 
 
