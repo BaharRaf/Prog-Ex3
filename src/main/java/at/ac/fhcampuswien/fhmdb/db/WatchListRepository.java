@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.fhmdb.layers;
+package at.ac.fhcampuswien.fhmdb.db;
 import at.ac.fhcampuswien.fhmdb.models.Movie;
 import com.j256.ormlite.dao.Dao;
 
@@ -28,7 +28,6 @@ public class WatchListRepository {
 
 
     private WatchListEntity movieToWatchList(Movie movie){
-        return new WatchListEntity(movie.getApiId());
+        return new WatchListEntity(movie.getTitle(),movie.getDescription(),WatchListEntity.genresToString(movie.getGenres()),movie.getApiId(),movie.getReleaseYear(),movie.getImgUrl(),movie.getLengthInMinutes(), movie.getRating());
     }
-
 }
