@@ -1,9 +1,9 @@
 package at.ac.fhcampuswien.fhmdb;
 
-import at.ac.fhcampuswien.fhmdb.controller.HomeController;
-import at.ac.fhcampuswien.fhmdb.models.Genre;
-import at.ac.fhcampuswien.fhmdb.models.Movie;
-import at.ac.fhcampuswien.fhmdb.models.SortedState;
+import at.ac.fhcampuswien.fhmdb.application.controller.HomeController;
+import at.ac.fhcampuswien.fhmdb.application.Genre;
+import at.ac.fhcampuswien.fhmdb.application.Movie;
+import at.ac.fhcampuswien.fhmdb.application.SortedState;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
