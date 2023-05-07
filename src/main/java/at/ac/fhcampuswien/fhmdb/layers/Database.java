@@ -1,10 +1,13 @@
 package at.ac.fhcampuswien.fhmdb.layers;
+import at.ac.fhcampuswien.fhmdb.exception.DatabaseException;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
@@ -43,5 +46,14 @@ public class Database {
         return this.dao;
     }
 
-
+    public void connect() throws DatabaseException {
+        try {
+            // code to connect to the database that could potentially throw a SQLException
+            // for example:
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydatabase", "root", "password");
+        } catch (SQLException e) {
+            throw new DatabaseException("Error connecting to the database.");
+        }
+    }
 }
+
