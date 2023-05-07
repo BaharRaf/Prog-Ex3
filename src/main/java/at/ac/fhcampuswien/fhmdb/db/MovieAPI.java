@@ -1,7 +1,7 @@
-package at.ac.fhcampuswien.fhmdb.dataLayer;
+package at.ac.fhcampuswien.fhmdb.db;
 
-import at.ac.fhcampuswien.fhmdb.models.Movie;
-import at.ac.fhcampuswien.fhmdb.models.Genre;
+import at.ac.fhcampuswien.fhmdb.application.Movie;
+import at.ac.fhcampuswien.fhmdb.application.Genre;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
