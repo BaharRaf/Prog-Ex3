@@ -1,7 +1,7 @@
 package at.ac.fhcampuswien.fhmdb.ui;
 
-import at.ac.fhcampuswien.fhmdb.layers.WatchListRepository;
-import at.ac.fhcampuswien.fhmdb.models.Movie;
+import at.ac.fhcampuswien.fhmdb.db.WatchListRepository;
+import at.ac.fhcampuswien.fhmdb.application.Movie;
 import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
