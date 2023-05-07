@@ -11,7 +11,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Database {
-    public static final String DB_URL = "jdbc:h2:file: ./db/watchlistdb"; //find DB_URL in documentation (embedded)
+    public static final String DB_URL = "jdbc:h2:file: ./db/WatchListEntity"; //find DB_URL in documentation (embedded)
     public static final String user = "user";
     public static final String password = "pass";
 
@@ -26,6 +26,8 @@ public class Database {
         createTables();
 
     }
+
+
     public static Database getDatabase() throws SQLException { //exception zu WatchlistRepository
         if(instance == null){ //if no instance exists create new Database instance, only one instance should exist(singleton)
             instance = new Database();
