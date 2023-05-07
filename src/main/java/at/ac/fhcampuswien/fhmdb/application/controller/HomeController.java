@@ -1,13 +1,12 @@
-package at.ac.fhcampuswien.fhmdb.controller;
+package at.ac.fhcampuswien.fhmdb.application.controller;
 
 import at.ac.fhcampuswien.fhmdb.FhmdbApplication;
 import at.ac.fhcampuswien.fhmdb.exception.MovieAPIException;
 import at.ac.fhcampuswien.fhmdb.exception.java.lang.Throwable;
-import at.ac.fhcampuswien.fhmdb.ui.MovieAPI;
-import at.ac.fhcampuswien.fhmdb.layers.WatchListRepository;
-import at.ac.fhcampuswien.fhmdb.models.Genre;
-import at.ac.fhcampuswien.fhmdb.models.Movie;
-import at.ac.fhcampuswien.fhmdb.models.SortedState;
+import at.ac.fhcampuswien.fhmdb.db.MovieAPI;
+import at.ac.fhcampuswien.fhmdb.application.Genre;
+import at.ac.fhcampuswien.fhmdb.application.Movie;
+import at.ac.fhcampuswien.fhmdb.application.SortedState;
 import at.ac.fhcampuswien.fhmdb.ui.MovieCell;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
@@ -18,14 +17,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.w3c.dom.events.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
@@ -301,4 +298,7 @@ public class HomeController implements Initializable {
                 .collect(Collectors.toList());     // Step 4: collect the filtered movies into a list and return it
     }
 
-}
+
+
+    }
+

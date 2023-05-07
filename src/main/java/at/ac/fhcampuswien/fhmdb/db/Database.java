@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.fhmdb.layers;
+package at.ac.fhcampuswien.fhmdb.db;
 import at.ac.fhcampuswien.fhmdb.exception.DatabaseException;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;

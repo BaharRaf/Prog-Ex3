@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.fhmdb.controller;
+package at.ac.fhcampuswien.fhmdb.application.controller;
 
 import at.ac.fhcampuswien.fhmdb.FhmdbApplication;
 import com.jfoenix.controls.JFXButton;
