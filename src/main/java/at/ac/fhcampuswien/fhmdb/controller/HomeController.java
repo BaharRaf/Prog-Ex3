@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.fhmdb.controller;
 
 import at.ac.fhcampuswien.fhmdb.FhmdbApplication;
+import at.ac.fhcampuswien.fhmdb.exception.java.lang.Throwable;
 import at.ac.fhcampuswien.fhmdb.ui.MovieAPI;
 import at.ac.fhcampuswien.fhmdb.layers.WatchListRepository;
 import at.ac.fhcampuswien.fhmdb.models.Genre;
@@ -78,7 +79,11 @@ public class HomeController implements Initializable {
     }
 
     public void initializeState() {
-        allMovies = MovieAPI.getAllMovies(); //get the API movies hehe
+        try {
+            allMovies = MovieAPI.getAllMovies(); //get the API movies hehe
+        } catch (IOException e) {
+            Throwable.showExceptionDialog(e);
+        }
         observableMovies.clear();
         observableMovies.addAll(allMovies); // add all movies to the observable list
         sortedState = SortedState.NONE;

@@ -3,6 +3,7 @@ package at.ac.fhcampuswien.fhmdb.ui;
 import at.ac.fhcampuswien.fhmdb.models.Movie;
 import at.ac.fhcampuswien.fhmdb.models.Genre;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -41,13 +42,13 @@ public class MovieAPI {
     }
 
     //Ohne Parameter Aufgerufen wird dann:  //Übersichtlicher, damit man es nicht später in den anderen Methoden schreiben muss
-    public static List<Movie> getAllMovies(){
+    public static List<Movie> getAllMovies() throws IOException {
         return getAllMovies(null, null, null, null);
     }
 
     //Movies herholen: request schicken -> response zurückbekommen
 
-    public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom){
+    public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom) throws IOException {
         String url = buildURL(query, genre, releaseYear, ratingFrom);
 
         //Request bauen:
@@ -60,7 +61,7 @@ public class MovieAPI {
 
 
         OkHttpClient client = new OkHttpClient();
-        try (Response response = client.newCall(request).execute()){
+      Response response = client.newCall(request).execute();
             //bekommen response in JSON format sollen es aber auf unsere Klassen "parsen" -> die Movies gleich draus machen
             String responseBody = response.body().string(); //nur body, dort wo die wichtigen Informationen für uns drinker sind.
             //GSON dafür zuständig, dass es ein JSON (das was im Response Body drinnen steht, automatisch auf eine bestimmte Klasse umändert/parsed.
@@ -69,11 +70,7 @@ public class MovieAPI {
             Movie[] movies = gson.fromJson(responseBody, Movie[].class); //nimmt response body und wandelt es in ein Movie Array um, damit wir das dann in unserer APp benutzen können
 
             return Arrays.asList(movies);
-        }
-        catch (Exception e){
-            System.err.println("Could not get the movies from the API."); //damit User erfährt, dass was falsch gelaufen ist.
-        }
-        return new ArrayList<>(); //damit es nicht abstürzt eine leere Liste übergeben.
+
     }
 
 }
