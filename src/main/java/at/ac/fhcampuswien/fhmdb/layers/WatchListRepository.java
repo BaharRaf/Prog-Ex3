@@ -7,10 +7,10 @@ import java.util.List;
 
 public class WatchListRepository {
     //EXTRA LAYER TO ACCESS DAO FROM DATABASE
-    Dao<WatchList, Long> dao;
+    Dao<WatchListEntity, Long> dao;
     public WatchListRepository(){ //exception von Database
         try {
-            this.dao = Data.getDatabase().getWatchlistDao();
+            this.dao = Database.getDatabase().getWatchlistDao();
         }catch (SQLException e) {
             e.printStackTrace();
         }
@@ -22,13 +22,13 @@ public class WatchListRepository {
     public void removeFromWatchList(Movie movie){
 
     }
-    public List<WatchList> getAll() throws SQLException {
+    public List<WatchListEntity> getAll() throws SQLException {
         return dao.queryForAll();
     }
 
 
-    private WatchList movieToWatchList(Movie movie){
-        return new WatchList(movie.getApiId());
+    private WatchListEntity movieToWatchList(Movie movie){
+        return new WatchListEntity(movie.getApiId());
     }
 
 }

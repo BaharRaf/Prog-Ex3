@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @DatabaseTable(tableName = "watchlist")
-public class WatchList {
+public class WatchListEntity {
     @DatabaseField(generatedId = true)
     long id;
     @DatabaseField()
@@ -26,13 +26,13 @@ public class WatchList {
     int lengthInMinutes;
     @DatabaseField()
     double rating;
-    public WatchList(){} //no-argument constructor required by DAO(?)
+    public WatchListEntity(){} //no-argument constructor required by DAO(?)
 
-    public WatchList(String apiId){ //as a test, so that you only pass one parameter of movie
+    public WatchListEntity(String apiId){ //as a test, so that you only pass one parameter of movie
                                             //(can be deleted, then also change in WatchlistRepository)
         this.apiId = apiId;
     }
-    public WatchList(String apiId, String title, String description, String genres, int releaseYear, String imgUrl, int lengthInMinutes, double rating) {
+    public WatchListEntity(String apiId, String title, String description, String genres, int releaseYear, String imgUrl, int lengthInMinutes, double rating) {
         this.apiId = apiId;
         this.title = title;
         this.description = description;
