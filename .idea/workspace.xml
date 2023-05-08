@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="databank test">
+    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="/db">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +50,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/43670/.m2/repository/com/j256/ormlite/ormlite-jdbc/6.1/ormlite-jdbc-6.1.jar",
+    "last_opened_file_path": "C:/Users/43670/IdeaProjects/ProgEx3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.30689654",
     "settings.editor.selected.configurable": "preferences.lookFeel",
@@ -236,14 +235,7 @@
       <option name="project" value="LOCAL" />
       <updated>1683502426356</updated>
     </task>
-    <task id="LOCAL-00020" summary="databank test">
-      <created>1683503312392</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1683503312392</updated>
-    </task>
-    <option name="localTasksCounter" value="21" />
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,7 +272,6 @@
     <MESSAGE value="DB URL path updated" />
     <MESSAGE value="./db" />
     <MESSAGE value="/db" />
-    <MESSAGE value="databank test" />
-    <option name="LAST_COMMIT_MESSAGE" value="databank test" />
+    <option name="LAST_COMMIT_MESSAGE" value="/db" />
   </component>
 </project>
