@@ -9,6 +9,8 @@ module at.ac.fhcampuswien.fhmdb {
     requires com.google.gson;
     requires java.sql;
 
+
+
     opens at.ac.fhcampuswien.fhmdb.application to com.google.gson; //damit das alles funktioniert
     opens at.ac.fhcampuswien.fhmdb.ui to ormlite.jdbc;//exception
     opens at.ac.fhcampuswien.fhmdb.db to ormlite.jdbc;//exception
