@@ -1,9 +1,7 @@
 package at.ac.fhcampuswien.fhmdb.ui;
-
 import at.ac.fhcampuswien.fhmdb.db.WatchListRepository;
 import at.ac.fhcampuswien.fhmdb.application.Movie;
 import com.jfoenix.controls.JFXButton;
-import javafx.event.ActionEvent;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
@@ -12,7 +10,6 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-import java.sql.SQLException;
 import java.util.stream.Collectors;
 
 public class MovieCell extends ListCell<Movie> {
@@ -23,7 +20,7 @@ public class MovieCell extends ListCell<Movie> {
     private final JFXButton addToWatchlistBtn = new JFXButton("Add to watchlist");
     private final VBox layout = new VBox(title, detail, genre, detailBtn, addToWatchlistBtn);
 
-    WatchListRepository repository = new WatchListRepository();
+    WatchListRepository repository = WatchListRepository.getInstance();
 
     @Override
     protected void updateItem(Movie movie, boolean empty) {

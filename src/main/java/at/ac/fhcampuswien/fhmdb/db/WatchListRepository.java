@@ -5,10 +5,16 @@ import com.j256.ormlite.dao.Dao;
 import java.sql.SQLException;
 import java.util.List;
 
-public class WatchListRepository {
+public class WatchListRepository  {
+    private static final WatchListRepository instance = new WatchListRepository();
+
+    public static WatchListRepository getInstance() {
+        return instance;
+    }
+
     //EXTRA LAYER TO ACCESS DAO FROM DATABASE
     Dao<WatchListEntity, Long> dao;
-    public WatchListRepository(){ //exception von Database
+    private WatchListRepository(){ //exception von Database
         try {
             this.dao = Database.getDatabase().getWatchlistDao();
         }catch (SQLException e) {
