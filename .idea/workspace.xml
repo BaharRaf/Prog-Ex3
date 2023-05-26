@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="singleton pattern added to WatchListRepository">
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/MovieAPIRequestBuilder.java" afterDir="false" />
+    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="MovieAPIRequestBuilder class added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/AscendingSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/DefaultSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/DescendingSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/SortState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -258,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685131590405</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="MovieAPIRequestBuilder class added">
+      <created>1685132875372</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1685132875372</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -297,7 +307,8 @@
     <MESSAGE value="/db" />
     <MESSAGE value="watchlist-view.fxml  added" />
     <MESSAGE value="singleton pattern added to WatchListRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="singleton pattern added to WatchListRepository" />
+    <MESSAGE value="MovieAPIRequestBuilder class added" />
+    <option name="LAST_COMMIT_MESSAGE" value="MovieAPIRequestBuilder class added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
