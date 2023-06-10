@@ -2,6 +2,8 @@ package at.ac.fhcampuswien.fhmdb.db;
 import at.ac.fhcampuswien.fhmdb.application.Movie;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.DeleteBuilder;
+import com.j256.ormlite.stmt.PreparedQuery;
+import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -44,8 +46,12 @@ public class WatchListRepository  {
         deleteBuilder.delete();
     }
     public List<WatchListEntity> getAll() throws SQLException {
-        return dao.queryForAll();
+        QueryBuilder<WatchListEntity, Long> queryBuilder = dao.queryBuilder();
+        queryBuilder.selectColumns("title");
+        PreparedQuery<WatchListEntity> preparedQuery = queryBuilder.prepare();
+        return dao.query(preparedQuery);
     }
+
 
 
 

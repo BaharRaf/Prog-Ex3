@@ -4,8 +4,9 @@ import java.util.Comparator;
 import java.util.List;
 
 public class AscendingSort implements SortState{
+    @Override
     public List<Movie> sort(List<Movie> movies) {
-        movies.sort(Comparator.comparing(Movie::getTitle)); // assuming Movie has a getTitle() method
+        movies.sort(Comparator.comparing(Movie::getTitle));
         return movies;
     }
 }

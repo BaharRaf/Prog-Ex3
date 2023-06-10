@@ -4,8 +4,10 @@ import java.util.Comparator;
 import java.util.List;
 
 public class DescendingSort implements SortState{
+    @Override
     public List<Movie> sort(List<Movie> movies) {
         movies.sort(Comparator.comparing(Movie::getTitle).reversed());
         return movies;
     }
 }
+

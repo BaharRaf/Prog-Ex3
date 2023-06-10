@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -26,8 +27,7 @@ public class WatchlistViewController {
     public JFXListView<String> movieWatchlistView;
     @FXML
     public JFXButton watchlistBtn;
-    @FXML
-    public JFXButton showDetailBtn;
+
 
     private WatchListRepository repository = WatchListRepository.getInstance();
 
@@ -35,7 +35,10 @@ public class WatchlistViewController {
         try {
             List<WatchListEntity> watchlistMovies = repository.getAll();
 
-            // Set the watchlistMovies to the movieWatchlistView for display
+            // Clear the existing items in the movieWatchlistView
+           // movieWatchlistView.getItems().clear();
+
+            // Set the watchlistMovies titles to the movieWatchlistView for display
             movieWatchlistView.getItems().addAll(watchlistMovies.stream().map(WatchListEntity::getTitle).toList());
 
             // Set the click event handler for the movieWatchlistView items
@@ -46,8 +49,10 @@ public class WatchlistViewController {
                     handleWatchlistItemDoubleClick(selectedItem);
                 }
             });
-            // Set the click event handler for the showDetailBtn button
-            showDetailBtn.setOnAction(this::showDetailBtnClicked);
+
+            // Set the click event handler for the watchlistBtn button
+            watchlistBtn.setOnAction(this::watchlistBtnClicked);
+
 
 
         } catch (SQLException e) {
@@ -78,13 +83,21 @@ public class WatchlistViewController {
 
     // Event handler for the watchlistBtn button
     public void watchlistBtnClicked(ActionEvent event) {
-        // Handle the watchlistBtn button click event
         System.out.println("Watchlist button clicked");
-        // Call the click event handler if available
-        if (clickEventHandler != null) {
-            clickEventHandler.onClick(event, false, watchlistBtn);
+
+        List<WatchListEntity> watchlistMovies;
+        try {
+            watchlistMovies = repository.getAll();
+            // Clear the existing items in the movieWatchlistView
+            movieWatchlistView.getItems().clear();
+            // Set the watchlistMovies titles to the movieWatchlistView for display
+            movieWatchlistView.getItems().addAll(watchlistMovies.stream().map(WatchListEntity::getTitle).toList());
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
+
+
     // Event handler for removing a movie from the watchlist
     public void removeMovieFromWatchlist(ActionEvent event) {
         String selectedItem = movieWatchlistView.getSelectionModel().getSelectedItem();
@@ -100,12 +113,13 @@ public class WatchlistViewController {
     }
     // Event handler for the showDetailBtn button
     public void showDetailBtnClicked(ActionEvent event) {
-        // Get the selected movie from the watchlist
         String selectedItem = movieWatchlistView.getSelectionModel().getSelectedItem();
 
         if (selectedItem != null) {
-            // Add your code here to show the detail view for the selected movie
-            System.out.println("Show Detail button clicked for: " + selectedItem);
+            // Get the movie details from the repository or any other source
+            String title = selectedItem;
+            String description = ""; // Replace with the actual description
+
             // Load the detail view FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(FhmdbApplication.class.getResource("detail-view.fxml"));
             try {
@@ -113,12 +127,17 @@ public class WatchlistViewController {
                 Stage stage = new Stage();
                 stage.setScene(scene);
                 stage.show(); // Show the detail view scene
+
+                // Get the controller instance and set the movie details
+                DetailViewController controller = fxmlLoader.getController();
+                controller.setMovieDetails(title, description);
             } catch (IOException e) {
                 System.err.println("Error while loading detail view.");
                 e.printStackTrace();
             }
         }
     }
+
 
 
 

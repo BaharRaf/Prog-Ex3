@@ -1,21 +1,36 @@
 package at.ac.fhcampuswien.fhmdb.db;
 
-import at.ac.fhcampuswien.fhmdb.application.Movie;
-import at.ac.fhcampuswien.fhmdb.application.Genre;
+import at.ac.fhcampuswien.fhmdb.application.*;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import okhttp3.*;
 import com.google.gson.*;
 
 
 public class MovieAPI {
+    private static SortState state = new DefaultSort();
     private static final String URL_API = "https://prog2.fh-campuswien.ac.at/movies";
     private static final String URL = "http://localhost:8080/movies";
     private static final String DELIMITER = "&"; //Separator
+
+
+    public static void sortAscending() {
+        state = new AscendingSort();
+    }
+    public static void sortDescending() {
+        state = new DescendingSort();
+    }
+    public static void unsorted() {
+        state = new DefaultSort();
+    }
+
+
+
 
 
     //damit wir die dann hinschicken können hehe
@@ -52,27 +67,21 @@ public class MovieAPI {
     public static List<Movie> getAllMovies(String query, Genre genre, String releaseYear, String ratingFrom) throws IOException {
         String url = buildURL(query, genre, releaseYear, ratingFrom);
 
-        //Request bauen:
-        //Müssen jetzt einen GET request schicken - mit Okhttp :)
         Request request = new Request.Builder()
                 .url(url)
-                .removeHeader("User-Agent") //Hint -> User_agent_Header -> remove
+                .removeHeader("User-Agent")
                 .addHeader("User-Agent", "http.agent")
                 .build();
 
-
         OkHttpClient client = new OkHttpClient();
-      Response response = client.newCall(request).execute();
-            //bekommen response in JSON format sollen es aber auf unsere Klassen "parsen" -> die Movies gleich draus machen
-            String responseBody = response.body().string(); //nur body, dort wo die wichtigen Informationen für uns drinker sind.
-            //GSON dafür zuständig, dass es ein JSON (das was im Response Body drinnen steht, automatisch auf eine bestimmte Klasse umändert/parsed.
-            Gson gson = new Gson();
-            //Movies erstellen
-            Movie[] movies = gson.fromJson(responseBody, Movie[].class); //nimmt response body und wandelt es in ein Movie Array um, damit wir das dann in unserer APp benutzen können
+        Response response = client.newCall(request).execute();
 
-            return Arrays.asList(movies);
+        String responseBody = response.body().string();
+        Gson gson = new Gson();
 
-
-        }
-
+        List<Movie> movies = Arrays.asList(gson.fromJson(responseBody, Movie[].class));
+        return state.sort(movies);  // Sort the movies before returning them
     }
+
+
+}

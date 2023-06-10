@@ -72,6 +72,15 @@ public class HomeController implements Initializable {
 
 
 
+    private void updateMovieList() {
+        try {
+            observableMovies.clear();
+            observableMovies.addAll(MovieAPI.getAllMovies());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeState();
@@ -113,7 +122,34 @@ public class HomeController implements Initializable {
         Double[] rating = new Double[]{1.00, 2.00, 3.00, 4.00, 5.00, 6.00, 7.00, 8.00, 9.00};
         ratingFromComboBox.getItems().addAll(rating);
         ratingFromComboBox.setPromptText("Filter by rating: selected or higher");
+
+        //statePAternButtons:
+        Button sortAscendingButton = new Button("Sort Ascending");
+        sortAscendingButton.setOnAction(event -> {
+            MovieAPI.sortAscending();
+            updateMovieList();
+        });
+
+        Button sortDescendingButton = new Button("Sort Descending");
+        sortDescendingButton.setOnAction(event -> {
+            MovieAPI.sortDescending();
+            updateMovieList();
+        });
+
+        Button sortUnsortedButton = new Button("Sort Unsorted");
+        sortUnsortedButton.setOnAction(event -> {
+            MovieAPI.unsorted();
+            updateMovieList();
+        });
+
+
+        // Add the buttons to the scene
+        mainVBox.getChildren().addAll(sortAscendingButton, sortDescendingButton, sortUnsortedButton);
     }
+
+
+
+
 
     // sort movies based on sortedState
     // by default sorted state is NONE
@@ -190,6 +226,34 @@ public class HomeController implements Initializable {
     }
 
 
+
+    public void updateSortedState() {
+        // Check the first two movies in the observableMovies list to determine the current sorting order
+        if (observableMovies.size() >= 2) {
+            Movie firstMovie = observableMovies.get(0);
+            Movie secondMovie = observableMovies.get(1);
+            if (firstMovie.getTitle().compareTo(secondMovie.getTitle()) < 0) {
+                sortedState = SortedState.ASCENDING;
+            } else {
+                sortedState = SortedState.DESCENDING;
+            }
+        } else {
+            sortedState = SortedState.NONE;
+        }
+    }
+    public void applySortOrder() {
+        if (sortedState == SortedState.ASCENDING) {
+            observableMovies.sort(Comparator.comparing(Movie::getTitle));
+        } else if (sortedState == SortedState.DESCENDING) {
+            observableMovies.sort(Comparator.comparing(Movie::getTitle).reversed());
+        }
+    }
+
+
+
+
+
+
     public void applyAllFilters(String searchQuery, Object genre, Integer releaseYear, Double rating) {
         List<Movie> filteredMovies = allMovies;
 
@@ -211,6 +275,13 @@ public class HomeController implements Initializable {
 
         observableMovies.clear();
         observableMovies.addAll(filteredMovies);
+
+        // Ensure sorting persists after filtering
+        if(sortedState != SortedState.NONE) {
+            applySortOrder();
+        }
+        // Update sortedState based on the current sorting order
+        updateSortedState();
     }
 
     public void searchBtnClicked(ActionEvent actionEvent) {

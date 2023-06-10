@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<GridPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.fhmdb.application.controller.DetailViewController">
+    <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="400.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints minHeight="30.0" vgrow="SOMETIMES" />
+    </rowConstraints>
+    <children>
+        <Label text="Movie Title:" />
+        <Label fx:id="titleLabel" />
+        <Label text="Description:" />
+        <Label fx:id="descriptionLabel" />
+        <!-- Add more UI components to display other movie details -->
+        <Button text="Home" onAction="#handleHomeButton" />
+    </children>
+</GridPane>

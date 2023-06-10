@@ -4,31 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="MovieAPIRequestBuilder class added">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c51a12f8-dda0-467d-9b25-7aaf393ceb69.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c51a12f8-dda0-467d-9b25-7aaf393ceb69/storage_v2/_src_/database/WATCHLISTDB.C09e3Q.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c51a12f8-dda0-467d-9b25-7aaf393ceb69/storage_v2/_src_/database/WATCHLISTDB.C09e3Q/schema/INFORMATION_SCHEMA.NBgcMw.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c51a12f8-dda0-467d-9b25-7aaf393ceb69/storage_v2/_src_/database/WATCHLISTDB.C09e3Q/schema/PUBLIC.aaZQjQ.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2023_23_39_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_05_2023_23_39__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/DetailViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/at/ac/fhcampuswien/fhmdb/detail-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/AscendingSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/AscendingSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/DefaultSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/DefaultSort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/DescendingSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/DescendingSort.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/SortState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/SortState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/SortedState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/SortedState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/MovieAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/MovieAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/ui/ClickEventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/ui/ClickEventHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/ui/MovieCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/ui/MovieCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/ac/fhcampuswien/fhmdb/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/ac/fhcampuswien/fhmdb/home-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/at/ac/fhcampuswien/fhmdb/watchlist-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/at/ac/fhcampuswien/fhmdb/watchlist-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -132,7 +119,7 @@
       <updated>1683403470772</updated>
       <workItem from="1683492250896" duration="959000" />
       <workItem from="1684778061122" duration="35000" />
-      <workItem from="1686407830513" duration="5986000" />
+      <workItem from="1686407830513" duration="17765000" />
     </task>
     <task id="LOCAL-00001" summary="Exception package and class created">
       <created>1683405723714</created>
@@ -288,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685132875372</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="WatchList update">
+      <created>1686414292574</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686414292574</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,6 +322,7 @@
     <MESSAGE value="watchlist-view.fxml  added" />
     <MESSAGE value="singleton pattern added to WatchListRepository" />
     <MESSAGE value="MovieAPIRequestBuilder class added" />
-    <option name="LAST_COMMIT_MESSAGE" value="MovieAPIRequestBuilder class added" />
+    <MESSAGE value="WatchList update" />
+    <option name="LAST_COMMIT_MESSAGE" value="WatchList update" />
   </component>
 </project>
