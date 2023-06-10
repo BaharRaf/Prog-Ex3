@@ -28,10 +28,9 @@ public class WatchListEntity {
     double rating;
     public WatchListEntity(){} //no-argument constructor required by DAO(?)
 
-    public WatchListEntity(String apiId){ //as a test, so that you only pass one parameter of movie
-                                            //(can be deleted, then also change in WatchlistRepository)
-        this.apiId = apiId;
-    }
+
+
+
     public WatchListEntity(String apiId, String title, String description, String genres, int releaseYear, String imgUrl, int lengthInMinutes, double rating) {
         this.apiId = apiId;
         this.title = title;
@@ -41,6 +40,9 @@ public class WatchListEntity {
         this.imgUrl = imgUrl;
         this.lengthInMinutes = lengthInMinutes;
         this.rating = rating;
+    }
+    public String getTitle() {
+        return title;
     }
     public static String genresToString(List<Genre> genres) {
         List<String> genresStrings = genres.stream()  //create stream of genre objects

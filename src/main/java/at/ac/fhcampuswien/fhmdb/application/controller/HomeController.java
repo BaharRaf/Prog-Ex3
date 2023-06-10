@@ -70,10 +70,13 @@ public class HomeController implements Initializable {
 
     public SortedState sortedState;
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initializeState();
         initializeLayout();
+        movieListView.setCellFactory(movieListView -> new MovieCell());
     }
 
     public void initializeState() {
@@ -237,19 +240,33 @@ public class HomeController implements Initializable {
     public void sortBtnClicked(ActionEvent actionEvent) {
         sortMovies();
     }
+    public void watchlistBtnClicked(ActionEvent actionEvent) {
+        try {
+            switchToWatchlistView(actionEvent);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     // SWITCH SCENE:
     public void switchToWatchlistView(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(FhmdbApplication.class.getResource("watchlist-view.fxml"));
         try {
             Scene scene = new Scene(fxmlLoader.load(), 890, 620);
-            Stage stage = (Stage)mainVBox.getScene().getWindow();
+            Stage stage = (Stage) mainVBox.getScene().getWindow();
             stage.setScene(scene);
 
+            WatchlistViewController watchlistViewController = fxmlLoader.getController();
+            // Pass the necessary data to the WatchlistViewController, if needed
+
         } catch (IOException ioe) {
-            System.err.println("Error while loading main page.");
+            System.err.println("Error while loading watchlist page.");
         }
     }
+
+
 
 
     // Streams:

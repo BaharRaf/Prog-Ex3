@@ -1,4 +1,5 @@
 package at.ac.fhcampuswien.fhmdb.ui;
+
 import at.ac.fhcampuswien.fhmdb.db.WatchListRepository;
 import at.ac.fhcampuswien.fhmdb.application.Movie;
 import com.jfoenix.controls.JFXButton;
@@ -10,6 +11,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
+import java.sql.SQLException;
 import java.util.stream.Collectors;
 
 public class MovieCell extends ListCell<Movie> {
@@ -21,6 +23,30 @@ public class MovieCell extends ListCell<Movie> {
     private final VBox layout = new VBox(title, detail, genre, detailBtn, addToWatchlistBtn);
 
     WatchListRepository repository = WatchListRepository.getInstance();
+
+    public MovieCell() {
+        addToWatchlistBtn.setOnAction(event -> {
+            Movie movie = getItem();
+            if (movie != null) {
+                try {
+                    repository.addToWatchList(movie); // Add the movie to the watchlist in the database
+                } catch (SQLException e) {
+                    // Handle any exceptions that may occur during database operations
+                    e.printStackTrace();
+                }
+            }
+        });
+
+
+        detailBtn.setOnAction(event -> {
+            Movie movie = getItem();
+            if (movie != null) {
+                // Handle the "Show Details" action for the movie
+                // For example, you can display a dialog or switch to a detailed view of the movie
+                System.out.println("Showing details for movie: " + movie.getTitle());
+            }
+        });
+    }
 
     @Override
     protected void updateItem(Movie movie, boolean empty) {
@@ -44,7 +70,6 @@ public class MovieCell extends ListCell<Movie> {
                     .collect(Collectors.joining(", "));
             genre.setText(genres);
 
-
             // color scheme
             detailBtn.setPrefWidth(110);
             detailBtn.getStyleClass().add("background-yellow");
@@ -66,5 +91,4 @@ public class MovieCell extends ListCell<Movie> {
             setGraphic(layout);
         }
     }
-
 }
