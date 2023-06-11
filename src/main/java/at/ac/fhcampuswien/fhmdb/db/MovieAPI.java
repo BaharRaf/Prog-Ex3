@@ -36,25 +36,24 @@ public class MovieAPI {
     //damit wir die dann hinschicken können hehe
     private static String buildURL(String query, Genre genre, String releaseYear, String ratingFrom){
 
-        StringBuilder url = new StringBuilder(URL_API);
+        URLBuilder url = new URLBuilder();
 
         //Checken, ob was übergeben wurde (Wenn ein Parameter übergeben wurde, brauchen wir ein "?"
         if((query != null && !query.isEmpty())|| genre != null || releaseYear != null || ratingFrom != null) { //empty ""
-            url.append("?");
             if(query != null && !query.isEmpty()){
-                url.append("query=").append(query).append(DELIMITER);
+                url.withQuery(query);
             }
             if(genre != null){
-                url.append("genre=").append(genre).append(DELIMITER);
+                url.withGenre(genre);
             }
             if(releaseYear != null){
-                url.append("releaseYear=").append(releaseYear).append(DELIMITER);
+                url.withReleaseYear(releaseYear);
             }
             if(ratingFrom != null){
-                url.append("ratingFrom=").append(ratingFrom).append(DELIMITER);
+                url.withRatingFrom(ratingFrom);
             }
         }
-        return url.toString();
+        return url.build();
     }
 
     //Ohne Parameter Aufgerufen wird dann:  //Übersichtlicher, damit man es nicht später in den anderen Methoden schreiben muss
@@ -84,13 +83,5 @@ public class MovieAPI {
     }
 
 
-    private static String buildUrl(String query, Genre genre, String releaseYear, String ratingFrom) {
-        return new URLBuilder()
-                .withQuery(query)
-                .withGenre(genre)
-                .withReleaseYear(releaseYear)
-                .withRatingFrom(ratingFrom)
-                .build();
-    }
 
 }
