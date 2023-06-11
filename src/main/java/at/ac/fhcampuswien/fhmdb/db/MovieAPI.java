@@ -84,4 +84,13 @@ public class MovieAPI {
     }
 
 
+    private static String buildUrl(String query, Genre genre, String releaseYear, String ratingFrom) {
+        return new URLBuilder()
+                .withQuery(query)
+                .withGenre(genre)
+                .withReleaseYear(releaseYear)
+                .withRatingFrom(ratingFrom)
+                .build();
+    }
+
 }

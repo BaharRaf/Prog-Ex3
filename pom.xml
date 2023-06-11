@@ -11,19 +11,19 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <junit.version>5.8.2</junit.version>
+        <junit.version>5.9.2</junit.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>17.0.2</version>
+            <version>19.0.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>17.0.2</version>
+            <version>19.0.2.1</version>
         </dependency>
 
         <dependency>
@@ -73,7 +73,21 @@
             <artifactId>ormlite-jdbc</artifactId>
             <version>6.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.rockymadden.delimited</groupId>
+            <artifactId>delimited_2.10</artifactId>
+            <version>0.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>net.javacrumbs.jadler-jdk</groupId>
+            <artifactId>jadler-jdk</artifactId>
+            <version>1.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>lein-jdk-tools</groupId>
+            <artifactId>lein-jdk-tools</artifactId>
+            <version>0.1.1</version>
+        </dependency>
 
 
     </dependencies>
@@ -117,4 +131,11 @@
             </plugin>
         </plugins>
     </build>
+    <repositories>
+        <repository>
+            <id>clojars</id>
+            <name>Clojars</name>
+            <url>https://repo.clojars.org/</url>
+        </repository>
+    </repositories>
 </project>
