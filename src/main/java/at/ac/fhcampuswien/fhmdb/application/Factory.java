@@ -8,7 +8,7 @@ public class Factory implements Callback<Class<?>, Object> {
     private HomeController homeController = null;
     private WatchlistViewController watchlistController = null;
 
-    private Factory() {
+    public Factory() {
         // Private constructor to enforce singleton pattern
     }
 
