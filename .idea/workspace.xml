@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="SortState.java AscendingSort.java DescendingSort.java DefaultSort.java added">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/CallBack.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/Factory.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/Observable.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/Observer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/URLBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/MovieAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/MovieAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -289,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686432586633</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Builder Pattern">
+      <created>1686502589325</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1686502589325</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,6 +336,7 @@
     <MESSAGE value="MovieAPIRequestBuilder class added" />
     <MESSAGE value="WatchList update" />
     <MESSAGE value="State Patterns" />
-    <option name="LAST_COMMIT_MESSAGE" value="State Patterns" />
+    <MESSAGE value="Builder Pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="Builder Pattern" />
   </component>
 </project>

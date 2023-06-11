@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.fhmdb.application.controller;
 
 import at.ac.fhcampuswien.fhmdb.FhmdbApplication;
+import at.ac.fhcampuswien.fhmdb.application.Observer;
 import at.ac.fhcampuswien.fhmdb.db.WatchListEntity;
 import at.ac.fhcampuswien.fhmdb.db.WatchListRepository;
 import at.ac.fhcampuswien.fhmdb.ui.ClickEventHandler;
@@ -9,17 +10,20 @@ import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ResourceBundle;
 
 
-public class WatchlistViewController {
+public class WatchlistViewController  {
 
     @FXML
     public VBox mainVBox;
@@ -148,4 +152,6 @@ public class WatchlistViewController {
     public void setClickEventHandler(ClickEventHandler<ActionEvent> clickEventHandler) {
         this.clickEventHandler = clickEventHandler;
     }
+
+
 }

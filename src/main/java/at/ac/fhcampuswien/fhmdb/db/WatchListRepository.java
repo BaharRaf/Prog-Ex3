@@ -1,14 +1,17 @@
 package at.ac.fhcampuswien.fhmdb.db;
 import at.ac.fhcampuswien.fhmdb.application.Movie;
+import at.ac.fhcampuswien.fhmdb.application.Observable;
+import at.ac.fhcampuswien.fhmdb.application.Observer;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.DeleteBuilder;
 import com.j256.ormlite.stmt.PreparedQuery;
 import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-public class WatchListRepository  {
+public class WatchListRepository  implements Observable {
     private static final WatchListRepository instance = new WatchListRepository();
 
     public static WatchListRepository getInstance() {
@@ -17,7 +20,7 @@ public class WatchListRepository  {
 
     //EXTRA LAYER TO ACCESS DAO FROM DATABASE
     Dao<WatchListEntity, Long> dao;
-    private WatchListRepository(){ //exception von Database
+    public WatchListRepository(){ //exception von Database
         try {
             this.dao = Database.getDatabase().getWatchlistDao();
         }catch (SQLException e) {
@@ -57,5 +60,40 @@ public class WatchListRepository  {
 
     private WatchListEntity movieToWatchList(Movie movie){
         return new WatchListEntity(movie.getTitle(),movie.getDescription(),WatchListEntity.genresToString(movie.getGenres()),movie.getApiId(),movie.getReleaseYear(),movie.getImgUrl(),movie.getLengthInMinutes(), movie.getRating());
+    }
+
+
+
+   private List<Observer> obs ;
+
+    private List<String> Watchlist= new ArrayList<>();
+
+
+        public void addToWatchList(String movieName) {
+            if (!Watchlist.contains(movieName)){
+                Watchlist.add(movieName);
+                notifyObservers( "Movie successfully added to watchlist");
+            }
+            else {
+                notifyObservers("Movie already on watchlist");
+            }
+        }
+
+
+    public void registerObserver(Observer observer) {
+        obs.add(observer);
+
+    }
+
+    public void removeObserver(Observer observer) {
+        obs.remove(observer);
+
+    }
+
+    public void notifyObservers(String message) {
+        for (Observer observer: obs){
+            observer.update(message);
+        }
+
     }
 }

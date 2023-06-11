@@ -1,6 +1,7 @@
 package at.ac.fhcampuswien.fhmdb.application.controller;
 
 import at.ac.fhcampuswien.fhmdb.FhmdbApplication;
+import at.ac.fhcampuswien.fhmdb.db.WatchListRepository;
 import at.ac.fhcampuswien.fhmdb.exception.MovieAPIException;
 import at.ac.fhcampuswien.fhmdb.exception.java.lang.Throwable;
 import at.ac.fhcampuswien.fhmdb.db.MovieAPI;
@@ -34,7 +35,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class HomeController implements Initializable {
+public class HomeController implements Initializable,Observer {
     @FXML
     public JFXButton searchBtn;
 
@@ -70,6 +71,9 @@ public class HomeController implements Initializable {
 
     public SortedState sortedState;
 
+    public HomeController() {
+        super();
+    }
 
 
     private void updateMovieList() {
@@ -90,7 +94,10 @@ public class HomeController implements Initializable {
 
     public void initializeState() {
         try {
-            allMovies = MovieAPI.getAllMovies(); //get the API movies hehe
+            allMovies = MovieAPI.getAllMovies(); //get the API movies 
+            WatchListRepository watchListRepository = WatchListRepository.getInstance();
+
+
         } catch (IOException e) {
             Throwable.showExceptionDialog(new MovieAPIException("Oops!"));
         }
@@ -342,8 +349,9 @@ public class HomeController implements Initializable {
     }
 
 
-
-
-
+    @Override
+    public void update(Observable o, Object arg) {
+        
+    }
 }
 
