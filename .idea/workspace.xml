@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="SortState.java AscendingSort.java DescendingSort.java DefaultSort.java added">
+    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="Observable , Observer">
       <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/CallBack.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/Factory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/Observable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/Observer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/db/WatchListRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +289,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686502589325</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Observable , Observer">
+      <created>1686504897011</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1686504897011</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,7 +314,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Exception package and class created" />
     <MESSAGE value="DatabaseException function added" />
     <MESSAGE value="HomeController update" />
     <MESSAGE value="Throwable class and MovieAPIException added" />
@@ -337,6 +338,7 @@
     <MESSAGE value="WatchList update" />
     <MESSAGE value="State Patterns" />
     <MESSAGE value="Builder Pattern" />
-    <option name="LAST_COMMIT_MESSAGE" value="Builder Pattern" />
+    <MESSAGE value="Observable , Observer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Observable , Observer" />
   </component>
 </project>
