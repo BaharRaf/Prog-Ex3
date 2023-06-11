@@ -164,6 +164,7 @@ public class HomeController implements Initializable {
         }
     }
 
+
     public List<Movie> filterByQuery(List<Movie> movies, String query){
         if(query == null || query.isEmpty()) return movies;
 
@@ -273,16 +274,19 @@ public class HomeController implements Initializable {
             filteredMovies = filterByRating(filteredMovies, rating.toString());
         }
 
-        observableMovies.clear();
-        observableMovies.addAll(filteredMovies);
-
-        // Ensure sorting persists after filtering
-        if(sortedState != SortedState.NONE) {
-            applySortOrder();
-        }
-        // Update sortedState based on the current sorting order
+        // Update the sorted state
         updateSortedState();
+
+        // Set the filtered movies to the observable list
+        observableMovies.setAll(filteredMovies);
+
+        // Apply the sorting order if it is not SortedState.NONE
+        if (sortedState != SortedState.NONE) {
+            sortMovies();
+        }
     }
+
+
 
     public void searchBtnClicked(ActionEvent actionEvent) {
         String searchQuery = searchField.getText().trim().toLowerCase();
@@ -340,53 +344,6 @@ public class HomeController implements Initializable {
 
 
 
-    // Streams:
 
-    static String getMostPopularActor(List<Movie> movies) {
-        // Return an empty string if the movie list is null or empty
-        if (movies == null || movies.isEmpty()) {
-            return "";
-        }
-        // Create a stream of all actors in the main cast of the movies
-        Stream<String> actorStream = movies.stream().flatMap(e -> e.getMainCast().stream());
-        // Create a map of actor names to their frequency count in the main cast
-        Map<String, Long> actorCounts = actorStream.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        // Find the actor with the highest count and return their name
-        return actorCounts.entrySet().stream()
-                .max(Map.Entry.comparingByValue())
-                .map(Map.Entry::getKey)
-                // Return an empty string if there is no most frequent actor
-                .orElseGet(() -> "");
-    }
-
-    static String getLongestMovieTitle(List<Movie> movies){
-       /* if (movies == null || movies.isEmpty()) {
-            return null;
-        }
-        */
-        return movies.stream()                    // Step 1: create a stream of movies
-                .map(Movie::getTitle)            // Step 2: map each movie to its title
-                .max(Comparator.comparingInt(String::length)) // Step 3: find the longest title using a comparator
-                .orElse(null);                   // Step 4: return the longest title, or null if the stream is empty
-    }
-
-    static long countMoviesFrom(List<Movie> movies, String director){
-        var result = movies.stream() //mehrere Director können an einen Film gearbeitet haben, deswegen: contains
-                .filter(movie -> movie.getDirectors().contains(director)) //hier alle Filme, wo der Director drinnen ist
-                .count(); //schauen wie lange dieser Stream noch ist
-        return result;
-    }
-
-    static List<Movie> getMoviesBetweenYears(List<Movie> movies, int startYear, int endYear){
-        if (movies == null || movies.isEmpty()) {
-            return null;
-        }
-        return movies.stream()                      // Step 2: create a stream of movies
-                .filter(movie -> movie.getReleaseYear() >= startYear && movie.getReleaseYear() <= endYear) // Step 3: filter the stream to include only movies released between startYear and endYear
-                .collect(Collectors.toList());     // Step 4: collect the filtered movies into a list and return it
-    }
-
-
-
-    }
+}
 
