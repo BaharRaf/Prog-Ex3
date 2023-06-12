@@ -87,6 +87,8 @@ public class HomeController implements Initializable,Observer {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
         initializeState();
         initializeLayout();
         movieListView.setCellFactory(movieListView -> new MovieCell());
@@ -103,6 +105,8 @@ public class HomeController implements Initializable,Observer {
         }
         observableMovies.clear();
         observableMovies.addAll(allMovies); // add all movies to the observable list
+        MovieAPI.unsorted();
+        updateMovieList();
         sortedState = SortedState.NONE;
     }
 
@@ -129,30 +133,31 @@ public class HomeController implements Initializable,Observer {
         Double[] rating = new Double[]{1.00, 2.00, 3.00, 4.00, 5.00, 6.00, 7.00, 8.00, 9.00};
         ratingFromComboBox.getItems().addAll(rating);
         ratingFromComboBox.setPromptText("Filter by rating: selected or higher");
+    }
 
         //statePAternButtons:
-        Button sortAscendingButton = new Button("Sort Ascending");
-        sortAscendingButton.setOnAction(event -> {
-            MovieAPI.sortAscending();
-            updateMovieList();
-        });
+        // Button sortAscendingButton = new Button("Sort Ascending");
+        // sortAscendingButton.setOnAction(event -> {
+        // MovieAPI.sortAscending();
+        // updateMovieList();
+        // });
 
-        Button sortDescendingButton = new Button("Sort Descending");
-        sortDescendingButton.setOnAction(event -> {
-            MovieAPI.sortDescending();
-            updateMovieList();
-        });
+        //  Button sortDescendingButton = new Button("Sort Descending");
+        // sortDescendingButton.setOnAction(event -> {
+        //    MovieAPI.sortDescending();
+        //   updateMovieList();
+        //  });
 
-        Button sortUnsortedButton = new Button("Sort Unsorted");
-        sortUnsortedButton.setOnAction(event -> {
-            MovieAPI.unsorted();
-            updateMovieList();
-        });
+        //  Button sortUnsortedButton = new Button("Sort Unsorted");
+        // sortUnsortedButton.setOnAction(event -> {
+        //    MovieAPI.unsorted();
+        //   updateMovieList();
+        // });
 
 
         // Add the buttons to the scene
-        mainVBox.getChildren().addAll(sortAscendingButton, sortDescendingButton, sortUnsortedButton);
-    }
+        // mainVBox.getChildren().addAll(sortAscendingButton, sortDescendingButton, sortUnsortedButton);
+        // }
 
 
 
@@ -161,13 +166,16 @@ public class HomeController implements Initializable,Observer {
     // sort movies based on sortedState
     // by default sorted state is NONE
     // afterwards it switches between ascending and descending
+
     public void sortMovies() {
         if (sortedState == SortedState.NONE || sortedState == SortedState.DESCENDING) {
-            observableMovies.sort(Comparator.comparing(Movie::getTitle));
+            MovieAPI.sortAscending();;
             sortedState = SortedState.ASCENDING;
+            updateMovieList();
         } else if (sortedState == SortedState.ASCENDING) {
-            observableMovies.sort(Comparator.comparing(Movie::getTitle).reversed());
+            MovieAPI.sortDescending();;
             sortedState = SortedState.DESCENDING;
+            updateMovieList();
         }
     }
 
@@ -241,19 +249,27 @@ public class HomeController implements Initializable,Observer {
             Movie firstMovie = observableMovies.get(0);
             Movie secondMovie = observableMovies.get(1);
             if (firstMovie.getTitle().compareTo(secondMovie.getTitle()) < 0) {
+                MovieAPI.sortAscending();
+                updateMovieList();
                 sortedState = SortedState.ASCENDING;
             } else {
+                MovieAPI.sortDescending();
+                updateMovieList();
                 sortedState = SortedState.DESCENDING;
             }
         } else {
+            MovieAPI.unsorted();
+            updateMovieList();
             sortedState = SortedState.NONE;
         }
     }
     public void applySortOrder() {
         if (sortedState == SortedState.ASCENDING) {
-            observableMovies.sort(Comparator.comparing(Movie::getTitle));
+            MovieAPI.sortAscending();
+            updateMovieList();
         } else if (sortedState == SortedState.DESCENDING) {
-            observableMovies.sort(Comparator.comparing(Movie::getTitle).reversed());
+            MovieAPI.sortDescending();
+            updateMovieList();
         }
     }
 
@@ -284,14 +300,19 @@ public class HomeController implements Initializable,Observer {
         // Update the sorted state
         updateSortedState();
 
+
+
         // Set the filtered movies to the observable list
         observableMovies.setAll(filteredMovies);
 
         // Apply the sorting order if it is not SortedState.NONE
         if (sortedState != SortedState.NONE) {
-            sortMovies();
+
         }
-    }
+            MovieAPI.unsorted();
+            updateMovieList();
+        }
+
 
 
 
@@ -304,7 +325,8 @@ public class HomeController implements Initializable,Observer {
         applyAllFilters(searchQuery, genre, releaseYear, rating);
 
         if(sortedState != SortedState.NONE) {
-            sortMovies();
+            MovieAPI.unsorted();
+            updateMovieList();
         }
     }
 
