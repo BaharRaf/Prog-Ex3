@@ -302,6 +302,7 @@ public class HomeController implements Initializable,Observer {
 
 
 
+
         // Set the filtered movies to the observable list
         observableMovies.setAll(filteredMovies);
 
@@ -325,8 +326,7 @@ public class HomeController implements Initializable,Observer {
         applyAllFilters(searchQuery, genre, releaseYear, rating);
 
         if(sortedState != SortedState.NONE) {
-            MovieAPI.unsorted();
-            updateMovieList();
+            sortMovies();
         }
     }
 

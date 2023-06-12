@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="factory pattern used">
+    <list default="true" id="135729a1-60a8-4d34-917e-a8bb77399902" name="Changes" comment="Sort button removed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/at/ac/fhcampuswien/fhmdb/application/controller/WatchlistViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686517186266</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Sort button removed">
+      <created>1686564391691</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1686564391691</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,7 +341,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Exception Propagation from MovieAPI to HomeController" />
     <MESSAGE value=" MovieAPIException function changed" />
     <MESSAGE value="db Package and WatchlistMovieEntity class added" />
     <MESSAGE value="connect to the data base function added to Database" />
@@ -360,6 +365,7 @@
     <MESSAGE value="Factory , CallBack" />
     <MESSAGE value="use URLBuilder" />
     <MESSAGE value="factory pattern used" />
-    <option name="LAST_COMMIT_MESSAGE" value="factory pattern used" />
+    <MESSAGE value="Sort button removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sort button removed" />
   </component>
 </project>
